@@ -14,7 +14,7 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://micro-frontends.org/" />
-    <meta property="og:image" content="/ressources/screen/three-teams.png" />
+    <meta property="og:image" content="/micro-frontends/ressources/screen/three-teams.png" />
     <meta property="og:site_name" content="Micro Frontends" />
     <meta property="og:description" content="Técnicas, estratégias e receitas para a construção de um aplicativo Web moderno com várias equipes usando diferentes frameworks JavaScript." />
     <script type="application/ld+json">
@@ -52,8 +52,8 @@
         }
       }
     </script>
-    <link rel="stylesheet" href="/assets/css/style.css" media="screen" type="text/css">
-    <link rel="stylesheet" href="/assets/css/print.css" media="print" type="text/css">
+    <link rel="stylesheet" href="/micro-frontends/assets/css/style.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="/micro-frontends/assets/css/print.css" media="print" type="text/css">
   </head>
 
   <body>
@@ -90,10 +90,10 @@
 <p>However, this idea is not new. It has a lot in common with the <a href="http://scs-architecture.org/">Self-contained Systems</a> concept. In the past approaches like this went by the name of <a href="https://dev.otto.de/2014/07/29/scaling-with-microservices-and-vertical-decomposition/">Frontend Integration for Verticalised Systems</a>. But Micro Frontends is clearly a more friendly and less bulky term.</p>
 
 <p><strong>Monolithic Frontends</strong>
-<img src="/ressources/diagrams/organisational/monolith-frontback-microservices.png" alt="Monolithic Frontends" /></p>
+<img src="/micro-frontends/ressources/diagrams/organisational/monolith-frontback-microservices.png" alt="Monolithic Frontends" /></p>
 
 <p><strong>Organisation in Verticals</strong>
-<img src="/ressources/diagrams/organisational/verticals-headline.png" alt="End-To-End Teams with Micro Frontends" /></p>
+<img src="/micro-frontends/ressources/diagrams/organisational/verticals-headline.png" alt="End-To-End Teams with Micro Frontends" /></p>
 
 <h2 id="whats-a-modern-web-app">What’s a Modern Web App?</h2>
 
@@ -135,7 +135,7 @@
 
 <p>It features a <strong>variant selector</strong> to switch between the three different tractor models. On change product image, name, price and recommendations are updated. There is also a <strong>buy button</strong>, which adds the selected variant to the basket and a <strong>mini basket</strong> at the top that updates accordingly.</p>
 
-<p><a href="./0-model-store/"><img src="/ressources/video/model-store-0.gif" alt="Example 0 - Product Page - Plain JS" /></a></p>
+<p><a href="./0-model-store/"><img src="/micro-frontends/ressources/video/model-store-0.gif" alt="Example 0 - Product Page - Plain JS" /></a></p>
 
 <p><a href="./0-model-store/">try in browser</a> &amp; <a href="https://github.com/neuland/micro-frontends/tree/master/0-model-store">inspect the code</a></p>
 
@@ -145,7 +145,7 @@
 
 <p>In this example, the page is split into separate components/fragments owned by three teams. <strong>Team Checkout</strong> (blue) is now responsible for everything regarding the purchasing process - namely the <strong>buy button</strong> and <strong>mini basket</strong>. <strong>Team Inspire</strong> (green) manages the <strong>product recommendations</strong> on this page. The page itself is owned by <strong>Team Product</strong> (red).</p>
 
-<p><a href="./1-composition-client-only/"><img src="/ressources/screen/three-teams.png" alt="Example 1 - Product Page - Composition" /></a></p>
+<p><a href="./1-composition-client-only/"><img src="/micro-frontends/ressources/screen/three-teams.png" alt="Example 1 - Product Page - Composition" /></a></p>
 
 <p><a href="./1-composition-client-only/">try in browser</a> &amp; <a href="https://github.com/neuland/micro-frontends/tree/master/1-composition-client-only">inspect the code</a></p>
 
@@ -167,7 +167,7 @@ window.customElements.define('blue-buy', BlueBuy);
 
 <p>Now every time the browser comes across a new <code class="highlighter-rouge">blue-buy</code> tag, the constructor is called. <code class="highlighter-rouge">this</code> is the reference to the root DOM node of the custom element. All properties and methods of a standard DOM element like <code class="highlighter-rouge">innerHTML</code> or <code class="highlighter-rouge">getAttribute()</code> can be used.</p>
 
-<p><img src="/ressources/video/custom-element.gif" alt="Custom Element in Action" /></p>
+<p><img src="/micro-frontends/ressources/video/custom-element.gif" alt="Custom Element in Action" /></p>
 
 <p>When naming your element the only requirement the spec defines is that the name must <strong>include a dash (-)</strong> to maintain compatibility with upcoming new HTML tags. In the upcoming examples the naming convention <code class="highlighter-rouge">[team_color]-[feature]</code> is used. The team namespace guards against collisions and this way the ownership of a feature becomes obvious, simply by looking at the DOM.</p>
 
@@ -189,7 +189,7 @@ container.innerHTML = '&lt;blue-buy sku="t_fendt"&gt;&lt;/blue-buy&gt;';
 
 <p>If Team Product used a templating engine that features DOM diffing, like React, this would be done by the algorithm automatically.</p>
 
-<p><img src="/ressources/video/custom-element-attribute.gif" alt="Custom Element Attribute Change" /></p>
+<p><img src="/micro-frontends/ressources/video/custom-element-attribute.gif" alt="Custom Element Attribute Change" /></p>
 
 <p>To support this the Custom Element can implement the <code class="highlighter-rouge">attributeChangedCallback</code> and specify a list of <code class="highlighter-rouge">observedAttributes</code> for which this callback should be triggered.</p>
 
@@ -344,7 +344,7 @@ server {
 
 <p>This animation shows the tractor store in a browser which has <strong>JavaScript disabled</strong>.</p>
 
-<p><a href="./ressources/video/server-render.mp4"><img src="/ressources/video/server-render.gif" alt="Serverside Rendering - Disabled JavaScript" /></a></p>
+<p><a href="./ressources/video/server-render.mp4"><img src="/micro-frontends/ressources/video/server-render.gif" alt="Serverside Rendering - Disabled JavaScript" /></a></p>
 
 <p><a href="https://github.com/neuland/micro-frontends/tree/master/2-composition-universal">inspect the code</a></p>
 
@@ -491,7 +491,7 @@ So use this technique wisely and try to get user feedback.</p>
         <aside id="sidebar">
           <div class="author">
             <h2>The Author</h2>
-            <img src="/ressources/images/michael-geers-75.jpg" srcset="/ressources/images/michael-geers-75.jpg 1x, /ressources/images/michael-geers-150.jpg 2x" alt="Author Michael Geers">
+            <img src="/micro-frontends/ressources/images/michael-geers-75.jpg" srcset="/ressources/images/michael-geers-75.jpg 1x, /ressources/images/michael-geers-150.jpg 2x" alt="Author Michael Geers">
             <a href="http://geers.tv"><strong>Michael Geers</strong></a> is a software engineer at <a href="https://www.neuland-bfi.de/">neuland Büro für Informatik</a>.<br>He worked on multiple large e-commerce projects over the last ten years.<br>He loves the frontend and is passionate about design systems and web-performance.<br>
             Follow on <a href="https://twitter.com/naltatis">Twitter</a> or <a href="https://github.com/naltatis">GitHub</a>.
           </div>
@@ -499,7 +499,7 @@ So use this technique wisely and try to get user feedback.</p>
             <div class="book__inner">
               <h2>🚜 The Book</h2>
               <a href="https://www.manning.com/books/micro-frontends-in-action?a_aid=mfia&a_bid=5f09fdeb">
-                <img src="/ressources/images/micro-frontends-in-action-book-200.png" srcset="/ressources/images/micro-frontends-in-action-book-200.png 1x, /ressources/images/micro-frontends-in-action-book-400.png 2x" alt="book cover Micro Frontends in Action">
+                <img src="/micro-frontends/ressources/images/micro-frontends-in-action-book-200.png" srcset="/ressources/images/micro-frontends-in-action-book-200.png 1x, /ressources/images/micro-frontends-in-action-book-400.png 2x" alt="book cover Micro Frontends in Action">
                 <span>
                     <strong>Micro Frontends in Action</strong>
                     available in Manning Early Access Program (MEAP)
